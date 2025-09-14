@@ -1,0 +1,109 @@
+/* Mobile-specific optimizations */
+/* This file contains mobile-specific CSS optimizations */
+
+/* Touch-friendly button sizes */
+@media (max-width: 768px) {
+  .btn-mobile {
+    min-height: 44px; /* iOS recommended touch target size */
+    min-width: 44px;
+  }
+  
+  /* Improve text readability on mobile */
+  .text-mobile {
+    font-size: 16px; /* Prevent zoom on iOS */
+    line-height: 1.5;
+  }
+  
+  /* Optimize spacing for mobile */
+  .mobile-spacing {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Improve navigation on mobile */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .tablet-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1280px) {
+  .desktop-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .desktop-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+/* Performance optimizations */
+.card-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .card-float {
+    transition: none;
+  }
+  
+  .card-float:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid;
+  }
+  
+  .button {
+    border: 2px solid;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .dark-optimized {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
